@@ -1,6 +1,9 @@
-<div id="web-wrapper">
-
+<div id="web-wrapper" (scroll)="scrollHandler($event)">
       <app-header></app-header>
+      <app-home></app-home>
+      <app-about></app-about>
+      <app-program></app-program>
+      <app-contact></app-contact>
       <router-outlet></router-outlet>
 
 </div>
