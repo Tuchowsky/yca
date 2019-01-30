@@ -1,5 +1,8 @@
+@import '../variables.scss';
+
 #header {
     height: 62px;
-    background-color: darkcyan;
+    background-color: $header-color;
     text-align: right;
+
 }
