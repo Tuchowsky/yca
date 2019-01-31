@@ -1,3 +1,5 @@
+@import './variables.scss';
+
 #main-container {
     height: 100%;
     width: 100%;
@@ -8,4 +10,21 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     transition: all 1s;
+    position: relative;
+}
+
+.header-wrapper {
+    width: 100%;
+    background-color: $header-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    box-shadow: 0px 5px 7px 0px rgba($black-color, .25);
+}
+
+.content-wrapper {
+    height: 100%;
+    width: $main-width;
+    margin: 0 auto;
 }

@@ -1,15 +1,20 @@
-<div 
+<div
       id="main-container" 
       #maincont  
       (scroll)="scrollHandler($event)"
       (window:resize)="onResize($event)">
-      <app-header></app-header>
-      <app-home></app-home>
-      <app-about></app-about>
-      <app-program></app-program>
-      <app-contact></app-contact>
-      <router-outlet></router-outlet>
-
+      
+      <header class="header-wrapper">
+            <app-header></app-header>
+      </header>
+      
+      <section class="content-wrapper">
+            <app-home></app-home>
+            <app-about></app-about>
+            <app-program></app-program>
+            <app-contact></app-contact>
+            <router-outlet></router-outlet>
+      </section>
 </div>
 
 

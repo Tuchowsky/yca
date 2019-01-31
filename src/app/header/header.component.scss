@@ -1,13 +1,47 @@
 @import '../variables.scss';
 
 #header {
-    height: 62px;
-    width: 100%;
-    background-color: $header-color;
+    width: $main-width;
     text-align: right;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 5;
+    margin: 0 auto;
+    
+    .header-wrapper {
+        height: 72px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 1.5rem;
+        text-transform: lowercase;
 
+        .logo {
+            width: 10rem;
+            height: 7.2rem;
+            img {
+                height: 100%;
+                width: 100%;
+                margin-top: 1rem;
+            }
+        }
+    
+        .menu {
+            display: flex;
+            flex-direction: row;
+            list-style: none;
+            margin-bottom: 0;
+
+            li {
+                padding-right: 2rem;
+                padding-left: 2rem;
+                border-right: 2px solid $white-color;
+                line-height: 3.5rem;
+            }
+
+            li:last-child {
+                border-right: none;
+                padding-right: 0;
+            }
+        }
+
+    }
 }

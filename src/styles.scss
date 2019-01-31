@@ -1,7 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+@import './app/variables.scss';
+
 * {
     padding: 0;
     margin: 0;
+}
+
+html{
+    font-size: 62.5%;
 }
 
 html, body {
@@ -9,4 +15,10 @@ html, body {
     width: 100%;
     padding-left: 0;
     padding-right: 0;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif; 
+    color: $white-color;
+    font-size: 1.2rem;
 }
