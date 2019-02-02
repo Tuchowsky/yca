@@ -9,8 +9,9 @@
     background-position: top center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    transition: all 1s;
+    transition: all 1s ease-in-out;
     position: relative;
+    overflow-x: hidden;
 }
 
 .header-wrapper {
@@ -25,6 +26,6 @@
 
 .content-wrapper {
     height: 100%;
-    width: $main-width;
+    max-width: $main-width;
     margin: 0 auto;
 }

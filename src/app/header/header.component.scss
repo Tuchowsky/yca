@@ -1,7 +1,7 @@
 @import '../variables.scss';
 
 #header {
-    width: $main-width;
+    max-width: $main-width;
     text-align: right;
     margin: 0 auto;
     
@@ -33,15 +33,55 @@
             li {
                 padding-right: 2rem;
                 padding-left: 2rem;
-                border-right: 2px solid $white-color;
                 line-height: 3.5rem;
+                border-right: 2px solid $white-color;
             }
 
-            li:last-child {
+            li:nth-child(1) {
+                border-right-color: $border-color1;
+            }
+
+            li:nth-child(2) {
+                border-right-color: $border-color2;
+            }
+
+            li:nth-child(3) {
+                border-right-color: $border-color3;
+            }
+
+            li:nth-child(4) {
                 border-right: none;
                 padding-right: 0;
             }
         }
 
+        .hamburger {
+            display: none;
+            width: 3.5rem;
+            height: 2rem;
+            background-image: url('../../assets/svg/hamburger-white.svg');
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+    }
+}
+
+@media screen and (max-width: 1024px) {
+
+    #header {
+        .header-wrapper {
+
+            .menu {
+                // visibility: hidden;
+                display: none;
+            }
+        
+            .hamburger {
+                cursor: pointer;
+                display: block;
+            }
+        }
     }
 }

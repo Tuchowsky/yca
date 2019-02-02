@@ -1,6 +1,42 @@
+@font-face {
+    font-family: YCA;
+    src: url('../../assets/fonts/yca.ttf');
+}
+
 #home {
-    background-color: darkred;
+    // background-color: darkred;
     height: 100%;
     width: 100%;
-    opacity: .4;
+    .row {
+        height: 100%;
+
+        .home-box-2 {
+            // display: flex;
+            // align-items: flex-end;
+            // justify-content: flex-end;
+            position: relative;
+            font-family: 'YCA', Arial, Helvetica, sans-serif;
+            
+            .rotated-text {
+                // position: absolute;
+                // bottom: 0;
+                // right: 0;
+                height: 100%;
+                text-align: left;
+
+                h1 {
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                    width: 50vh;
+                    display: block;
+                   // word-wrap: wrap;
+                    font-size: 6rem;
+                    line-height: 6rem;
+                    margin: 0;
+                    transform: translate(15%, -50%) rotate(-90deg);
+                }
+            }
+        }
+    }
 }
