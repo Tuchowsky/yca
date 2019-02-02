@@ -4,14 +4,14 @@
       <div class="logo">
         <img src="../../assets/svg/yca-logo.svg" alt="Young Coders Academy">
       </div>
-      <ul class="menu">
+      <ul class="menu" [ngClass]="{'menu-open': menuOpen}">
         <li>Home</li>
         <li>O nas</li>
         <li>Program</li>
         <li>Kontat</li>
       </ul>
-      <div class="hamburger">
-        
+      <div class="hamburger" [ngClass]="{'hamburger-open': menuOpen}" (click)="onShowMenu()">
+
       </div>
     </div>
   </div>
