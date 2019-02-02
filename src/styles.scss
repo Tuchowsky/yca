@@ -22,3 +22,125 @@ body {
     color: $white-color;
     font-size: 1.2rem;
 }
+// help classes
+.full-height {
+    height: 100%;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.yca-illustration {
+    height: 80%;
+    width: 80%;
+    background-size: 100% auto;
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+// note box - about us & programm
+.note-box {
+    position: relative;
+    height: 52rem;
+    width: 32rem;
+    border-radius: 2rem;
+    background: linear-gradient(135deg, #08639A 0%, #2DC5FD 80%);  
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 3px 3px 4px 0px rgba($black-color, .25); 
+    
+    .note-box-head {
+        position: relative;
+        margin-top: 1.5rem;
+        margin-left: -1rem;
+        height: 10.5rem;
+        width: 26rem;
+        border-top-left-radius: 2rem;
+        background: linear-gradient(90deg, #2DC5FD 0%, #08639A 100%);  
+        //box-shadow: 3px 3px 4px 0px rgba($black-color, .25);
+
+        h2 {
+            font-size: 3rem;
+            display: block;
+            line-height: 3rem;
+            position: relative;
+        }
+
+        h2::after {
+            position: absolute;
+            content: "";
+            bottom: -1.6rem;
+            left: 50%;
+            height: .2rem;
+            width: 6rem;
+            transform: translate(-50%, 0%);
+            background-color: $white-color;
+        }
+    }
+
+    .note-box-head::before {
+        position: absolute;
+        content: "";
+        left: 0;
+        bottom: -1rem;
+        width: 1rem;
+        height: 1rem;
+        background-image: url("src/assets/svg/corner-note-box.svg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+    }
+
+    .note-box-head::after {
+        position: absolute;
+        content: "";
+        right: -3.5rem;
+        top: 0;
+        width: 0;
+        height: 0;
+        border-top: 5.25rem solid transparent;
+        border-bottom: 5.25rem solid transparent;
+        border-left: 3.5rem solid rgb(8, 99, 154);
+
+       // box-shadow: 3px 3px 4px 0px rgba($black-color, .25);
+    }
+
+    .note-box-content {
+        width: 32rem;
+        height: 34.5rem;
+        margin-left: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 2rem;
+        position: relative;
+        border-bottom-right-radius: 0;
+        background: linear-gradient(90deg, #09659C 0%, #2DC5FD 90%, #2DC5FD 100%); 
+        box-shadow: 3px 3px 4px 0px rgba($black-color, .25); 
+        flex-direction: column;
+        p {
+            font-size: 1.8rem;
+            padding: 2rem;
+            margin: 0;
+        }
+    }
+
+    .note-box-content::after {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        content: "";
+        bottom: 0;
+        right: 0;
+        opacity: .2;
+        border-radius: 2rem;
+        background-image: url("src/assets/svg/yca-logo.svg");
+        background-size: 180% auto;
+        background-position-x: center;
+        background-position-y: -45%;
+        background-repeat: no-repeat;
+    }
+}

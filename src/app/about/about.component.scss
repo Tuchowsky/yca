@@ -1,6 +1,10 @@
 #about {
-    background-color: darkblue;
+    // background-color: darkblue;
     height: 100%;
     width: 100%;
-    opacity: .4;
+    // opacity: .4;
+
+    .yca-illustration-about {
+        background-image: url("../../assets/svg/yca-about-us-inspired-kid.svg");
+    }
 }
