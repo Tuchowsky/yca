@@ -37,7 +37,7 @@ body {
     height: 80%;
     width: 80%;
     background-size: 100% auto;
-    background-position: top center;
+    background-position: center;
     background-repeat: no-repeat;
 }
 
@@ -112,9 +112,9 @@ body {
 
     .note-box-content {
         width: 32rem;
-        height: 34.5rem;
+        height: 31.5rem;
         margin-left: 2rem;
-        margin-bottom: 2rem;
+        margin-bottom: 4rem;
         border-radius: 2rem;
         position: relative;
         border-bottom-right-radius: 0;
@@ -142,5 +142,53 @@ body {
         background-position-x: center;
         background-position-y: -45%;
         background-repeat: no-repeat;
+    }
+
+    .note-box-nav {
+        position: absolute;
+        left: -4rem;
+        bottom: -2.5rem;
+        height: 5rem;
+        width: 40rem;
+        display: flex;
+        justify-content: space-between;
+
+        .note-box-nav-btn {
+            height: 100%;
+            width: 8rem;
+            border-radius: 25rem;
+            background-color: $white-color;
+            cursor: pointer;
+            color: $secondary-font-color;
+            font-size: 1.2rem;
+
+            .note-box-arrow {
+                height: 1rem;
+                width: 1.2rem;
+                display: block;
+                background-image: url("../src/assets/svg/yca-navigation-arrow.svg");
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                margin: 0 1rem;
+            }
+
+            p {
+                padding-left: 0;
+                padding-right: 1rem;
+                margin: 0;
+            }
+        }
+
+        .note-box-nav-btn:last-child {
+            .note-box-arrow {
+                transform: rotate(180deg);
+            }
+
+            p {
+                padding-left: 1rem;
+                padding-right: 0;
+            }
+        }
     }
 }
