@@ -5,7 +5,18 @@
     </div>
     <div class="col-12 col-md-6 center">
       <!-- <app-note-box *ngFor="let programOption of programTable" [programOption]="programOption"></app-note-box> -->
-      <app-note-box [programOption]="programOption"></app-note-box>
+      <div class="note-box note-box-scale">
+        <app-note-box></app-note-box>
+      </div>
+
+      <div class="note-box">
+        <app-note-box></app-note-box>
+        <app-note-box-nav></app-note-box-nav>
+      </div>
+
+      <div class="note-box note-box-scale">
+        <app-note-box></app-note-box>
+      </div>
     </div>
   </div>
 </div>

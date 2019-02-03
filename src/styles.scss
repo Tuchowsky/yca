@@ -48,11 +48,15 @@ body {
     width: 32rem;
     border-radius: 2rem;
     background: linear-gradient(135deg, #08639A 0%, #2DC5FD 80%);  
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
     box-shadow: 3px 3px 4px 0px rgba($black-color, .25); 
     
+    app-note-box {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
     .note-box-head {
         position: relative;
         margin-top: 1.5rem;
@@ -191,4 +195,8 @@ body {
             }
         }
     }
+}
+
+.note-box-scale {
+    transform: scale(.3);
 }
