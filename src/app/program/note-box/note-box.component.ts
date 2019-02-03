@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-note-box',
@@ -7,13 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NoteBoxComponent implements OnInit {
 
-  @Input() programOption: [];
-
   constructor() { }
 
   
   ngOnInit() {
-    console.log(this.programOption);
+
   }
 
 }
