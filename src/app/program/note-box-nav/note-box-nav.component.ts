@@ -12,6 +12,7 @@ import { ProgramService } from 'src/app/services/program.service';
 export class NoteBoxNavComponent implements OnInit {
 
   programTable = [];
+  programTableIndex: number = 0;
 
   constructor(private programService: ProgramService) { }
 
