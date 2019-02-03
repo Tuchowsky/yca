@@ -27,6 +27,6 @@ export class NoteBoxNavComponent implements OnInit {
   }
 
   onShowNext() {
-    console.log('show next');
+    this.programNoteService.onShowNexNote();
   }
 }

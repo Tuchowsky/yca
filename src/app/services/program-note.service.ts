@@ -1,9 +1,9 @@
 import { Injectable, OnInit, Component } from '@angular/core';
 import { ProgramService } from './program.service';
+import { Subject } from 'rxjs';
+import { ProgramState } from '../interfaces/program-state';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 
 export class ProgramNoteService implements OnInit{
 
@@ -18,15 +18,17 @@ export class ProgramNoteService implements OnInit{
 
 
   constructor(private programService: ProgramService) { 
+
+    //console.log(this.previousNote);
+    // console.log(this.programSubject.next());
     this.programTable = [...this.programService.program];
     this.programTableLenght = this.programTable.length;
-   // console.log(this.programTable);
     this.recentNote.push(this.programTable[this.recentTableIndex]);
     this.nextNote.push(this.programTable[this.recentTableIndex + 1]);
     this.previousNote.push(this.getPreviousNote());
-    // console.log(this.recentNote, this.previousNote, this.nextNote);
-    // console.log(this.getPreviousNote());
   }
+
+
 
   ngOnInit() {
 
@@ -38,5 +40,11 @@ export class ProgramNoteService implements OnInit{
     } else {
       return this.programTable[this.recentTableIndex - 1];
     }
+  }
+
+  onShowNexNote() {
+    this.recentTableIndex++;
+    console.log(this.recentTableIndex);
+    
   }
 }
