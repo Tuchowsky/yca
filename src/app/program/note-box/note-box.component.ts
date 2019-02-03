@@ -9,7 +9,7 @@ import { Component, Input} from '@angular/core';
 })
 export class NoteBoxComponent {
 
-  @Input() note: [];
+  @Input() note: any;
 
 
   constructor() { }
