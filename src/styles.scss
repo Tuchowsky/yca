@@ -68,10 +68,11 @@ body {
         //box-shadow: 3px 3px 4px 0px rgba($black-color, .25);
 
         h2 {
-            font-size: 3rem;
+            font-size: 2rem;
             display: block;
             line-height: 3rem;
             position: relative;
+            text-align: center;
         }
 
         h2::after {

@@ -10,6 +10,8 @@ import { ProgramComponent } from './program/program.component';
 import { ContactComponent } from './contact/contact.component';
 import { NoteBoxComponent } from './program/note-box/note-box.component';
 import { NoteBoxNavComponent } from './program/note-box-nav/note-box-nav.component';
+import { ProgramService } from './services/program.service';
+import { ProgramNoteService } from './services/program-note.service';
 
 
 @NgModule({
@@ -27,7 +29,7 @@ import { NoteBoxNavComponent } from './program/note-box-nav/note-box-nav.compone
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [ProgramService, ProgramNoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

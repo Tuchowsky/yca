@@ -1,23 +1,27 @@
 import { Component, OnInit, Injectable } from '@angular/core';
-// import { ProgramService } from '../services/program.service';
+import { ProgramNoteService } from 'src/app/services/program-note.service';
 
 @Component({
   selector: 'app-program',
   templateUrl: './program.component.html',
   styleUrls: ['./program.component.scss'],
-  providers: []
+  providers: [ProgramNoteService]
 })
 
 @Injectable()
 export class ProgramComponent implements OnInit {
 
-  // programTable = [];
+  recentNote = [];
+  previousNote = [];
+  nextNote = [];
 
-  constructor() { }
+
+  constructor(private programNoteService: ProgramNoteService) { }
 
   ngOnInit() {
-    //this.programTable = this.programService.program;
-    // console.log(this.programTable);
+    this.recentNote = this.programNoteService.recentNote;
+    this.previousNote = this.programNoteService.previousNote;
+    this.nextNote = this.programNoteService.nextNote;
   }
 
 }
