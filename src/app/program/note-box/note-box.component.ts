@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input} from '@angular/core';
 
 
 @Component({
@@ -7,16 +7,11 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./note-box.component.scss'],
   providers: []
 })
-export class NoteBoxComponent implements OnInit {
+export class NoteBoxComponent {
 
   @Input() note: [];
 
 
   constructor() { }
-
-  
-  ngOnInit() {
-    console.log(this.note);
-  }
 
 }

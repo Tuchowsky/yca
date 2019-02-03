@@ -2,6 +2,8 @@ import { Component, OnInit, Injectable } from '@angular/core';
 
 
 import { ProgramNoteService } from 'src/app/services/program-note.service';
+import { Subscription } from 'rxjs';
+import { ProgramState } from '../interfaces/program-state';
 
 
 @Injectable()
@@ -10,27 +12,28 @@ import { ProgramNoteService } from 'src/app/services/program-note.service';
   selector: 'app-program',
   templateUrl: './program.component.html',
   styleUrls: ['./program.component.scss'],
+  providers: [ProgramNoteService]
 })
 
 export class ProgramComponent implements OnInit {
 
-  recentNote = [];
-  previousNote = [];
-  nextNote = [];
+
+  previousNote: {};
+  recentNote: {};
+  nextNote: {};
 
 
-
-  constructor(private programNoteService: ProgramNoteService) { 
-
-  }
+  constructor(private programNoteService: ProgramNoteService) { }
 
   ngOnInit() {
-    this.recentNote = this.programNoteService.recentNote;
-    this.previousNote = this.programNoteService.previousNote;
-    this.nextNote = this.programNoteService.nextNote;
 
-    // console.log(this.subscription);
-
+    this.programNoteService.notes.subscribe(
+      (state) => {
+        this.previousNote = state.previous,
+        this.recentNote = state.recent
+        this.nextNote = state.next
+      }
+    )
   }
 
 }

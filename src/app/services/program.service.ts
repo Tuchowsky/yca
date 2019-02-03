@@ -1,7 +1,7 @@
 export class ProgramService {
     program = [
         {
-            title: 'Nauka Programowa',
+            title: 'Nauka Programowania',
             content: 'Krok po kroku dzieci zdobywają wiedzę pozwalającą na uzyskanie nowych umiejętności. Od prostych zadań, poprzez wyjaśnienie kolejnych procesów aż po wykonanie złożonej pracy. Przekazujemy dzieciom wiedzę w przejrzysty i zrozumiały sposób.',
             background: 'young-coders-academy-programming-computer.svg'
         },

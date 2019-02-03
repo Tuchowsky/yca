@@ -8,7 +8,6 @@ import { ProgramNoteService } from 'src/app/services/program-note.service';
   selector: 'app-note-box-nav',
   templateUrl: './note-box-nav.component.html',
   styleUrls: ['./note-box-nav.component.scss'],
-  providers: [ProgramNoteService]
 })
 export class NoteBoxNavComponent implements OnInit {
 
@@ -18,15 +17,15 @@ export class NoteBoxNavComponent implements OnInit {
   constructor(private programNoteService: ProgramNoteService) { }
 
   ngOnInit() {
-    this.programTable = this.programNoteService.programTable;
-    // console.log(this.programTable);
+
   }
 
   onShowPrev() {
-    console.log('show prev');
+    this.programNoteService.onShowPrevNote();
   }
 
   onShowNext() {
-    this.programNoteService.onShowNexNote();
+    this.programNoteService.onShowNextNote();
+    
   }
 }

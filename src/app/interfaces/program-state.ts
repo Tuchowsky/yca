@@ -1,7 +1,7 @@
 export interface ProgramState {
 
-    previous: [];
-    recent: [];
-    next: [];
+    previous: {};
+    recent: {};
+    next: {};
 
 }
