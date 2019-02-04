@@ -12,7 +12,8 @@ import { NoteBoxComponent } from './program/note-box/note-box.component';
 import { NoteBoxNavComponent } from './program/note-box-nav/note-box-nav.component';
 import { ProgramService } from './services/program.service';
 import { ProgramNoteService } from './services/program-note.service';
-
+import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
+import { ScrollService } from './services/scroll.service';
 
 @NgModule({
   declarations: [
@@ -27,9 +28,10 @@ import { ProgramNoteService } from './services/program-note.service';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ScrollToModule.forRoot()
   ],
-  providers: [ProgramService, ProgramNoteService],
+  providers: [ProgramService, ProgramNoteService, ScrollService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

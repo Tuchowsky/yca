@@ -5,10 +5,10 @@
         <img src="../../assets/svg/yca-logo.svg" alt="Young Coders Academy">
       </div>
       <ul class="menu" [ngClass]="{'menu-open': menuOpen}">
-        <li>Home</li>
-        <li>O nas</li>
-        <li>Program</li>
-        <li>Kontat</li>
+        <li><a (click)="triggerScrollTo('home')">Home</a></li>
+        <li><a (click)="triggerScrollTo('o-nas')">O nas</a></li>
+        <li><a (click)="triggerScrollTo('program')">Program</a></li>
+        <li><a (click)="triggerScrollTo('kontakt')">Kontakt</a></li>
       </ul>
       <div class="hamburger" [ngClass]="{'hamburger-open': menuOpen}" (click)="onShowMenu()">
 
@@ -16,3 +16,4 @@
     </div>
   </div>
 </div>
+
