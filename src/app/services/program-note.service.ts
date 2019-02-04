@@ -14,6 +14,8 @@ export class ProgramNoteService implements OnInit{
   private previousNote: {};
   private recentNote: {};
   private nextNote: {};
+  private nextClicked: boolean = false;
+  private prevClicked: boolean = false;
 
 
   notes: BehaviorSubject<ProgramState>;
@@ -28,10 +30,12 @@ export class ProgramNoteService implements OnInit{
     this.recentNote = this.programTable[this.recentTableIndex];
     this.nextNote = this.programTable[this.recentTableIndex + 1];
 
-    this.notes = new BehaviorSubject<any>({
+    this.notes = new BehaviorSubject<ProgramState>({
       previous: this.previousNote,
       recent: this.recentNote,
-      next: this.nextNote 
+      next: this.nextNote,
+      nextClicked: this.nextClicked,
+      prevClicked: this.prevClicked
     })
   }
 
@@ -63,6 +67,8 @@ export class ProgramNoteService implements OnInit{
   }
 
   onShowNextNote() {
+    this.prevClicked = false;
+    this.nextClicked = true;
     this.recentTableIndex++;
     
     if(this.recentTableIndex > this.programTable.length - 1) {
@@ -78,15 +84,18 @@ export class ProgramNoteService implements OnInit{
       this.recentNote = this.programTable[this.recentTableIndex];
       this.nextNote = this.getNextNote();
     }
-
     this.notes.next({
       previous: this.previousNote,
       recent: this.recentNote,
-      next: this.nextNote
+      next: this.nextNote,
+      prevClicked: this.prevClicked,
+      nextClicked: this.nextClicked
     })
   }
 
   onShowPrevNote() {
+    this.prevClicked = true;
+    this.nextClicked = false;
     this.recentTableIndex--;
 
     if(this.recentTableIndex < 0) {
@@ -109,7 +118,9 @@ export class ProgramNoteService implements OnInit{
     this.notes.next({
       previous: this.previousNote,
       recent: this.recentNote,
-      next: this.nextNote
+      next: this.nextNote,
+      prevClicked: this.prevClicked,
+      nextClicked: this.nextClicked
     })
   }
 

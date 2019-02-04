@@ -1,4 +1,4 @@
-import { Component, OnInit, Injectable } from '@angular/core';
+import { Component, OnInit, Injectable, OnDestroy } from '@angular/core';
 
 
 import { ProgramNoteService } from 'src/app/services/program-note.service';
@@ -15,25 +15,30 @@ import { ProgramState } from '../interfaces/program-state';
   providers: [ProgramNoteService]
 })
 
-export class ProgramComponent implements OnInit {
+export class ProgramComponent implements OnInit, OnDestroy {
 
 
   previousNote: {};
   recentNote: {};
   nextNote: {};
 
+  private subscription; 
 
   constructor(private programNoteService: ProgramNoteService) { }
 
   ngOnInit() {
 
-    this.programNoteService.notes.subscribe(
+    this.subscription = this.programNoteService.notes.subscribe(
       (state) => {
         this.previousNote = state.previous,
         this.recentNote = state.recent
         this.nextNote = state.next
       }
     )
+  }
+
+  ngOnDestroy() {
+    this.subscription.unsubscibe();
   }
 
 }
