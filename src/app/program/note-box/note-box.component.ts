@@ -11,7 +11,6 @@ export class NoteBoxComponent {
 
   @Input() note: any;
 
-
   constructor() { }
 
 }
