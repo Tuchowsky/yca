@@ -84,18 +84,19 @@ export class ProgramNoteService implements OnInit{
       this.recentNote = this.programTable[this.recentTableIndex];
       this.nextNote = this.getNextNote();
     }
-    this.notes.next({
-      previous: this.previousNote,
-      recent: this.recentNote,
-      next: this.nextNote,
-      prevClicked: this.prevClicked,
-      nextClicked: this.nextClicked
-    })
+    this.updateState();
   }
 
   onShowPrevNote() {
     this.prevClicked = true;
     this.nextClicked = false;
+
+    setTimeout(()=>{
+      this.prevClicked = false;
+      this.nextClicked = false;
+      this.updateState();
+    }, 500)
+
     this.recentTableIndex--;
 
     if(this.recentTableIndex < 0) {
@@ -113,8 +114,11 @@ export class ProgramNoteService implements OnInit{
     }
 
     
+    this.updateState();
 
+  }
 
+  updateState() {
     this.notes.next({
       previous: this.previousNote,
       recent: this.recentNote,
@@ -123,6 +127,5 @@ export class ProgramNoteService implements OnInit{
       nextClicked: this.nextClicked
     })
   }
-
  
 }

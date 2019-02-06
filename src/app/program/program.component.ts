@@ -22,6 +22,9 @@ export class ProgramComponent implements OnInit, OnDestroy {
   recentNote: {};
   nextNote: {};
 
+  private prevClicked: boolean;
+  private nextClicked: boolean;
+
   private subscription; 
 
   constructor(private programNoteService: ProgramNoteService) { }
@@ -33,6 +36,8 @@ export class ProgramComponent implements OnInit, OnDestroy {
         this.previousNote = state.previous,
         this.recentNote = state.recent
         this.nextNote = state.next
+        this.prevClicked = state.prevClicked;
+        this.nextClicked = state.nextClicked;
       }
     )
   }
@@ -40,5 +45,22 @@ export class ProgramComponent implements OnInit, OnDestroy {
   ngOnDestroy() {
     this.subscription.unsubscibe();
   }
+
+  recentNoteMove() {
+    const moveLeft = this.prevClicked && !this.nextClicked
+    return {'note-box-left': moveLeft}
+  }
+
+  rightNoteMove() {
+    const normalState = !this.prevClicked && !this.nextClicked;
+    const moveLeft = this.prevClicked && !this.nextClicked
+    if(moveLeft) {
+      return {'note-box': moveLeft}
+    } else if(normalState){
+      return {'note-box-right': normalState}
+    }
+    
+  }
+
 
 }

@@ -1,6 +1,5 @@
 import { Component, Input} from '@angular/core';
 
-
 @Component({
   selector: 'app-note-box',
   templateUrl: './note-box.component.html',
@@ -9,8 +8,14 @@ import { Component, Input} from '@angular/core';
 })
 export class NoteBoxComponent {
 
+
   @Input() note: any;
 
+
+
   constructor() { }
+
+
+
 
 }
