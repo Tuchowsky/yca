@@ -48,16 +48,16 @@ body {
     position: absolute;
     height: 52rem;
     width: 32rem;
-
+    transform: translate(-50%, 0%) scale(1);
+    left: 50%;
     //top: 0;
     border-radius: 2rem;
     background: linear-gradient(135deg, #08639A 0%, #2DC5FD 80%);  
     box-shadow: 3px 3px 4px 0px rgba($black-color, .25); 
-    transition: all 1s;
-    transform: scale(1);
-    // display: flex;
-    // flex-direction: column;
-    // justify-content: space-between;
+    transition: all 1s; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     
     app-note-box {
         height: 100%;
@@ -157,19 +157,16 @@ body {
         background-repeat: no-repeat;
     }
 
-
-}
-
-//note box navigation
-.note-box-nav {
-    position: absolute;
-    left: 50%;
-    bottom: 0rem;
-    transform: translate(-50%, -50%);
-    height: 5rem;
-    width: 40rem;
-    display: flex;
-    justify-content: space-between;
+    //note box navigation
+    .note-box-nav {
+        position: absolute;
+        left: 50%;
+        bottom: -5rem;
+        transform: translate(-50%, -50%);
+        height: 5rem;
+        width: 40rem;
+        display: flex;
+        justify-content: space-between;
 
     .note-box-nav-btn {
         height: 100%;
@@ -198,18 +195,24 @@ body {
         }
     }
 
-    .note-box-nav-btn:last-child {
-        .note-box-arrow {
-            transform: rotate(180deg);
-        }
+        .note-box-nav-btn:last-child {
+            .note-box-arrow {
+                transform: rotate(180deg);
+            }
 
-        p {
-            padding-left: 1rem;
-            padding-right: 0;
+            p {
+                padding-left: 1rem;
+                padding-right: 0;
+            }
         }
     }
-}
 //---end of note box navigation
+}
+
+.note-box-no-bg {
+    background: none;  
+    box-shadow: none; 
+}
 
 .note-box-left {
     left: -13%;
@@ -225,65 +228,63 @@ body {
 //box animation classes
 
 .anim-move-left-to-sm {
-    animation: mlts .4s ease-in-out forwards;
+    animation: mlts 1s ease-in-out forwards;
 }
 //move left to small
 @keyframes mlts {
     0%{
-        left: 25%;
-
+        left: 50%;
+        opacity: 1;
     }
     49% {
         left: -13%;
         transform: scale(.3);
-        visibility: hidden;
+        opacity: 0;
     }
     50% {
-        left: 25.5%;
-        transform: scale(1);
+        left: 30%;
+       // transform: scale(1);
     }
     65% {
-        left: 25.5%;
-        transform: scale(.8);
-        visibility: hidden;
+        left: 30%;
+        transform: scale(.3);
+        opacity: 0;
     }
     72% {
-        visibility: visible;
+       // visibility: visible;
     }
     100% {
-        transform: scale(1);
-        visibility: visible;
+        // transform: scale(1);
+        opacity: 1;
     }
 }
 //move left to big
 .anim-move-left-to-bg {
-    animation: mltb .4s ease-in-out forwards;
+    animation: mltb 1s ease-in-out forwards;
 }
 @keyframes mltb {
     0%{
         left: 63%;
+        //opacity: 1;
 
     }
     65% {
-        transform: scale(.8);
-        visibility: hidden;
+        left: 30%;
+        transform: scale(.3);
+       // opacity: 0;
     }
     66% {
-        left: 25%;
+        left: 63%;
         transform: scale(0);
     }
     67% {
-        left: 63%;
+  
         transform: scale(0);
-        visibility: visible;
-    }
-    80% {
-        left: 63%;
-        visibility: visible;
+       // visibility: visible;
     }
     100% {
         transform: scale(.3);
-        visibility: visible;
+      //  visibility: visible;
     }
 }
 // .note-box-scale {
@@ -303,7 +304,7 @@ body {
 
 @media screen and (max-width: 768px) {
     .note-box{
-        transform: scale(.775);
+        transform: translate(-50%, 0%) scale(.775);
     }
 }
 
@@ -350,7 +351,7 @@ body {
 (max-width: 370px){
 
     .note-box{
-        transform: scale(.555);
+        transform: translate(-50%, 0%) scale(.555);
     }
 }
 
@@ -360,6 +361,7 @@ body {
         flex-direction: row;
 
         .responsive {
+            position: relative;
             height: 100%;
             width: 50%;
 
@@ -416,6 +418,6 @@ body {
 (max-height: 500px) and
 (orientation: landscape) {
     .note-box{
-        transform: scale(.5);
+        transform: translate(-50%, 0) scale(.5);
     }
 }

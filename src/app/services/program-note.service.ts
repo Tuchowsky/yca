@@ -45,18 +45,18 @@ export class ProgramNoteService implements OnInit{
     
   }
 
-  private getPreviousNote(): {} {
+  private getNextNote(): {} {
 
     if(this.recentTableIndex === 0) {
       return this.programTable[this.programTableLenght - 1];
     } else if(this.recentTableIndex === this.programTableLenght - 1) {
-      return this.programTable[0];
+      return this.programTable[this.programTableLenght - 2];
     } else {
       return this.programTable[this.recentTableIndex - 1];
     }
   }
 
-  private getNextNote(): {} {
+  private getPreviousNote(): {} {
     if(this.recentTableIndex === this.programTableLenght - 1) {
       return this.programTable[0];
     } else if(this.recentTableIndex === 0) {
@@ -95,7 +95,7 @@ export class ProgramNoteService implements OnInit{
       this.prevClicked = false;
       this.nextClicked = false;
       this.updateState();
-    }, 500)
+    }, 900)
 
     this.recentTableIndex--;
 

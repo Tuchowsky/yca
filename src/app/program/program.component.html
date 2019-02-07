@@ -5,7 +5,7 @@
     </div>
     <div class="center responsive-box responsive">
       <!-- <app-note-box *ngFor="let programOption of programTable" [programOption]="programOption"></app-note-box> -->
-      <div class="note-box note-box-left">
+      <div class="note-box note-box-scale note-box-left">
         <app-note-box [note]="previousNote"></app-note-box>
       </div>
 
@@ -16,12 +16,14 @@
         <app-note-box [note]="recentNote"></app-note-box>
       </div>
 
-      <div class="note-box note-box-right"
+      <div class="note-box note-box-scale note-box-right"
       [ngClass]="{'anim-move-left-to-bg': prevClicked}"
       >
         <app-note-box [note]="nextNote"></app-note-box>
       </div>
-      <app-note-box-nav></app-note-box-nav>
+      <div class="note-box note-box-no-bg">
+        <app-note-box-nav></app-note-box-nav>
+      </div>
     </div>
   </div>
 </div>
