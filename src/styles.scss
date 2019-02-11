@@ -287,6 +287,69 @@ body {
       //  visibility: visible;
     }
 }
+// move to right
+.anim-move-right-to-sm {
+    animation: mrts 1s ease-in-out forwards;
+}
+//move left to small
+@keyframes mrts {
+    0%{
+        left: 50%;
+        opacity: 1;
+    }
+    49% {
+        left: 63%;
+        transform: scale(.3);
+        opacity: 0;
+    }
+    50% {
+        left: 30%;
+       // transform: scale(1);
+    }
+    65% {
+        left: 30%;
+        transform: scale(.3);
+        opacity: 0;
+    }
+    72% {
+       // visibility: visible;
+    }
+    100% {
+        // transform: scale(1);
+        opacity: 1;
+    }
+}
+
+//move left to big
+.anim-move-right-to-bg {
+    animation: mrtb 1s ease-in-out forwards;
+}
+@keyframes mrtb {
+    0%{
+        left: -13%;
+        //opacity: 1;
+
+    }
+    65% {
+        left: 30%;
+        transform: scale(.3);
+       // opacity: 0;
+    }
+    66% {
+        left: -13%;
+        transform: scale(0);
+    }
+    67% {
+  
+        transform: scale(0);
+       // visibility: visible;
+    }
+    100% {
+        transform: scale(.3);
+      //  visibility: visible;
+    }
+}
+
 // .note-box-scale {
     
 // }

@@ -5,12 +5,14 @@
     </div>
     <div class="center responsive-box responsive">
       <!-- <app-note-box *ngFor="let programOption of programTable" [programOption]="programOption"></app-note-box> -->
-      <div class="note-box note-box-scale note-box-left">
+      <div class="note-box note-box-scale note-box-left"
+        [ngClass]="{'anim-move-right-to-bg': nextClicked}"
+        >
         <app-note-box [note]="previousNote"></app-note-box>
       </div>
 
       <div class="note-box" 
-        [ngClass]="{'anim-move-left-to-sm': prevClicked}"
+        [ngClass]="{'anim-move-left-to-sm': prevClicked, 'anim-move-right-to-sm': nextClicked}"
         >
         
         <app-note-box [note]="recentNote"></app-note-box>

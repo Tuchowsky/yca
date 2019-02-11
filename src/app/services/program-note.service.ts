@@ -69,6 +69,13 @@ export class ProgramNoteService implements OnInit{
   onShowNextNote() {
     this.prevClicked = false;
     this.nextClicked = true;
+
+    setTimeout(()=>{
+      this.prevClicked = false;
+      this.nextClicked = false;
+      this.updateState();
+    }, 900)
+
     this.recentTableIndex++;
     
     if(this.recentTableIndex > this.programTable.length - 1) {
